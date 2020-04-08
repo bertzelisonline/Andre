@@ -1,10 +1,10 @@
 from enum import Enum
 
 from Signals.AbstractSignal import AbstractSignal
-from Signals.SignalACCPTObject import SignalACCPTObjectObjectClass
+from Signals.I000_ACCPTObject import SignalACCPTObjectObjectClass
 
 
-class SignalSensObjListObjectSource(Enum):
+class SensObjListObjectSource(Enum):
     MRR = 0  # Midrange radar
     SWA = 1  # SWA radar
     SCALA = 2  # Lidar
@@ -19,7 +19,7 @@ class SignalSensObjListObjectSource(Enum):
     ACC_BOOST_TARGET = 11  # ACC object, that is selected, while boosting
 
 
-class SignalSensObjListObjectMoveState(Enum):
+class SensObjListObjectMoveState(Enum):
     UNKNOWN = 0  # Move state is unknown
     PROBABLE_STATIC = 1  # Object is probably static
     STATIC_OBJ = 2  # Object is static
@@ -28,7 +28,7 @@ class SignalSensObjListObjectMoveState(Enum):
     MOVABLE = 5  # Object is movable, when it moved, but now it doesn't move
 
 
-class SignalSensObjListObjectMovingDirection(Enum):
+class SensObjListObjectMovingDirection(Enum):
     UNKNOWN = 0  # Moving direction of the object is unknown
     SAME_DIRECTION = 1  # Moving direction is the same as the host-car
     OPPOSITE_DIRECTION = 2  # Moving direction is in the opposite of the host-car
@@ -126,48 +126,48 @@ class SignalSensObjList(AbstractSignal):
                  var_float_object_length: float,
                  var_float_object_length_std_dev: float,
                  ):
-        self.long_object_id = var_long_object_id
-        self.float_object_confidence = var_float_object_confidence
-        self.float_object_probability = var_float_object_probability
-        self.ulong_object_age = var_ulong_object_age
-        self.longlong_timestamp = var_longlong_timestamp
-        self.float_object_lane_assignment = var_float_object_lane_assignment
-        self.enum_object_source = var_enum_object_source
-        self.float_object_time_to_collision = var_float_object_time_to_collision
-        self.enum_object_class = var_enum_object_class
-        self.float_object_class_confidence = var_float_object_class_confidence
-        self.enum_object_move_state = var_enum_object_move_state
-        self.enum_object_moving_direction = var_enum_object_moving_direction
-        self.float_object_pos_x = var_float_object_pos_x
-        self.float_object_pos_x_std_dev = var_float_object_pos_x_std_dev
-        self.float_object_pos_y = var_float_object_pos_y
-        self.float_object_pos_y_std_dev = var_float_object_pos_y_std_dev
-        self.float_object_pos_z = var_float_object_pos_z
-        self.float_object_pos_z_std_dev = var_float_object_pos_z_std_dev
-        self.float_object_course_angle = var_float_object_course_angle
-        self.float_object_course_angle_std_dev = var_float_object_course_angle_std_dev
-        self.float_object_rel_speed_x = var_float_object_rel_speed_x
-        self.float_object_rel_speed_x_std_dev = var_float_object_rel_speed_x_std_dev
-        self.float_object_rel_speed_y = var_float_object_rel_speed_y
-        self.float_object_rel_speed_y_std_dev = var_float_object_rel_speed_y_std_dev
-        self.float_object_rel_speed_z = var_float_object_rel_speed_z
-        self.float_object_rel_speed_z_std_dev = var_float_object_rel_speed_z_std_dev
-        self.float_object_abs_speed_x = var_float_object_abs_speed_x
-        self.float_object_abs_speed_x_std_dev = var_float_object_abs_speed_x_std_dev
-        self.float_object_abs_speed_y = var_float_object_abs_speed_y
-        self.float_object_abs_speed_y_std_dev = var_float_object_abs_speed_y_std_dev
-        self.float_object_abs_speed_z = var_float_object_abs_speed_z
-        self.float_object_abs_speed_z_std_dev = var_float_object_abs_speed_z_std_dev
-        self.float_object_rel_acc_x = var_float_object_rel_acc_x
-        self.float_object_rel_acc_x_std_dev = var_float_object_rel_acc_x_std_dev
-        self.float_object_rel_acc_y = var_float_object_rel_acc_y
-        self.float_object_rel_acc_y_std_dev = var_float_object_rel_acc_y_std_dev
-        self.float_object_rel_acc_z = var_float_object_rel_acc_z
-        self.float_object_rel_acc_z_std_dev = var_float_object_rel_acc_z_std_dev
-        self.float_object_width = var_float_object_width
-        self.float_object_width_std_dev = var_float_object_width_std_dev
-        self.float_object_length = var_float_object_length
-        self.float_object_length_std_dev = var_float_object_length_std_dev
+        self.object_id = var_long_object_id
+        self.object_confidence = var_float_object_confidence
+        self.object_probability = var_float_object_probability
+        self.object_age = var_ulong_object_age
+        self.timestamp = var_longlong_timestamp
+        self.object_lane_assignment = var_float_object_lane_assignment
+        self.object_source = var_enum_object_source
+        self.object_time_to_collision = var_float_object_time_to_collision
+        self.object_class = var_enum_object_class
+        self.object_class_confidence = var_float_object_class_confidence
+        self.object_move_state = var_enum_object_move_state
+        self.object_moving_direction = var_enum_object_moving_direction
+        self.object_pos_x = var_float_object_pos_x
+        self.object_pos_x_std_dev = var_float_object_pos_x_std_dev
+        self.object_pos_y = var_float_object_pos_y
+        self.object_pos_y_std_dev = var_float_object_pos_y_std_dev
+        self.object_pos_z = var_float_object_pos_z
+        self.object_pos_z_std_dev = var_float_object_pos_z_std_dev
+        self.object_course_angle = var_float_object_course_angle
+        self.object_course_angle_std_dev = var_float_object_course_angle_std_dev
+        self.object_rel_speed_x = var_float_object_rel_speed_x
+        self.object_rel_speed_x_std_dev = var_float_object_rel_speed_x_std_dev
+        self.object_rel_speed_y = var_float_object_rel_speed_y
+        self.object_rel_speed_y_std_dev = var_float_object_rel_speed_y_std_dev
+        self.object_rel_speed_z = var_float_object_rel_speed_z
+        self.object_rel_speed_z_std_dev = var_float_object_rel_speed_z_std_dev
+        self.object_abs_speed_x = var_float_object_abs_speed_x
+        self.object_abs_speed_x_std_dev = var_float_object_abs_speed_x_std_dev
+        self.object_abs_speed_y = var_float_object_abs_speed_y
+        self.object_abs_speed_y_std_dev = var_float_object_abs_speed_y_std_dev
+        self.object_abs_speed_z = var_float_object_abs_speed_z
+        self.object_abs_speed_z_std_dev = var_float_object_abs_speed_z_std_dev
+        self.object_rel_acc_x = var_float_object_rel_acc_x
+        self.object_rel_acc_x_std_dev = var_float_object_rel_acc_x_std_dev
+        self.object_rel_acc_y = var_float_object_rel_acc_y
+        self.object_rel_acc_y_std_dev = var_float_object_rel_acc_y_std_dev
+        self.object_rel_acc_z = var_float_object_rel_acc_z
+        self.object_rel_acc_z_std_dev = var_float_object_rel_acc_z_std_dev
+        self.object_width = var_float_object_width
+        self.object_width_std_dev = var_float_object_width_std_dev
+        self.object_length = var_float_object_length
+        self.object_length_std_dev = var_float_object_length_std_dev
 
     def to_string(self):  # String-representation inside the object
         return ""

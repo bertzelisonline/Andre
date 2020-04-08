@@ -202,7 +202,7 @@ class RoadSegment:
 """
 This is the main struct of the interface
 """
-class RoadNetwork(AbstractSignal):
+class SignalRoadNetwork(AbstractSignal):
     def __init__(self,
                  timestamp_us: int,
                  sensor_source: SensorSource,  # TODO: implement sensorsource
