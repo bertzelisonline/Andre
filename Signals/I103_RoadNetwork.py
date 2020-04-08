@@ -89,7 +89,7 @@ class OptimizationCriterion(Enum):
 
 
 """
-Classes for the main struct
+Classes for the main struct: LaneMarking, LaneSegment, RouteElement, Route, RoadSegment
 """
 class LaneMarking:
     def __init__(self):
@@ -199,7 +199,9 @@ class RoadSegment:
         self.country = country  # ISO 3166-1 ALPHA-2 Release 2007-03 country code of current position; 0 stands for unknown. Valid values are those specified by ISO 3166-1 numeric [15].
         self.traffic_right_hand = traffic_right_hand  # false stands for Driving Side Left. True stands for Driving Side Right. Default is 1.
 
-
+"""
+This is the main struct of the interface
+"""
 class RoadNetwork(AbstractSignal):
     def __init__(self,
                  timestamp_us: int,
@@ -226,3 +228,6 @@ class RoadNetwork(AbstractSignal):
 
         self.route_arguments = route_arguments  # start and end of route
         self.fetch_arguments = fetch_arguments  # map corridor arguments. What corridor was requested from fetcher?
+
+    def to_string(self):  # String-representation inside the object
+        return ""
