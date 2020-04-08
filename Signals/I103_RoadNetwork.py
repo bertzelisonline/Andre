@@ -5,73 +5,77 @@ from Signals.SignalACCPTObject import SignalACCPTObjectObjectClass
 
 
 class RoadCategory(Enum):
-    UNKNOW = 00 #road is an unknwon road
-    OFF_ROAD				= 01 # off road (sand, gravel etc.)
-    LOCAL_ROAD				= 02 # road is a small local road (villages etc.)
-    PROVINCE_ROAD			= 03 # road is small province road (owned and maintained by countries province)
-    COUNTRY_ROAD			= 04 # road is a bigger country road (owned and maintained by country/county)
-    EXPRESSWAY				= 05 # road is not a highway but designed for faster traveling than country road
-    HIGHWAY				= 06 # road is highway		
-    INTERSTATE_ROAD		= 07 # road is a big interstate road / motorway / Autobahn connecting counties within a state
-    ROUNDABOUT				= 08 # round about
-    BUSSTOP				= 10 # 
-    SIDEWALK				= 11 # 
+    UNKNOW = 0 #road is an unknwon road
+    OFF_ROAD = 1 # off road (sand, gravel etc.)
+    LOCAL_ROAD = 2 # road is a small local road (villages etc.)
+    PROVINCE_ROAD = 3 # road is small province road (owned and maintained by countries province)
+    COUNTRY_ROAD = 4 # road is a bigger country road (owned and maintained by country/county)
+    EXPRESSWAY = 5 # road is not a highway but designed for faster traveling than country road
+    HIGHWAY = 6 # road is highway
+    INTERSTATE_ROAD	= 7 # road is a big interstate road / motorway / Autobahn connecting counties within a state
+    ROUNDABOUT = 8 # round about
+    #DIE 9 FEHLT!!!!!!!!!!!!!!! TODO: Add the 9th value!
+    BUSSTOP	= 10 #
+    SIDEWALK = 11 #
     PEDESTRIAN_CROSSING	= 12 # 
-    RAIL_ROAD_CROSSING		= 13 # 
-    GRASSSTRIP				= 14 # 
-    TOLLGATE				= 15 #
-    EMERGENCY_BAY			= 16 # 
+    RAIL_ROAD_CROSSING = 13 #
+    GRASSSTRIP = 14 #
+    TOLLGATE = 15 #
+    EMERGENCY_BAY = 16 #
     
 
 class SurfaceMaterial(Enum):
-    UNKNOWN	= UNKNOWN			# road surface is unknown
-    ASPHALT = ASPHALT				# hard
-    ROUGH = ROUGH					# cobble stone
-    DIRT = DIRT					# loose
+    UNKNOWN	= 0	# road surface is unknown
+    ASPHALT = 1				# hard
+    ROUGH = 2					# cobble stone
+    DIRT = 3					# loose
+    NUMBER_OF_ENTRIES = 4 # NoE
 
 
 class LaneCategory(Enum):
-    UNKNOWN = 00 # Lane category is unknown
-    NORMAL = 01 # TBD: What does this mean?
-    ENTRY					= 02 # road is an entry to a higher road category (highway etc.)
-    EXIT					= 03 # road is an exit to a lower road category (e.g. from highway to Interstate)
-    BUSLANE				= 04 # 
-    MERGING_LEFT			= 05 # lane will be merged with left lane
-    MERGING_RIGHT			= 06 # lane will be merged with right lane
-    TERMINATING			= 07 # lane will terminate abruptly. Lane change necessary most likely.
-    SLOW					= 08 # lane for slow moving vehicles
-    SPECIAL				= 09 # lane for special vehicles (e.g. busses, taxis)
-    EMERGENCY				= 10 # emergency lane, shoulder
-    PARKING				= 11 # 
-    TEMPORARY				= 12 # 
-    PAVEMENT				=
-    BIKE					= designated bike lane
-    NUMBER_OF_ENTRIES		= 13 # Total number of lane category entries
+    UNKNOWN = 0 # Lane category is unknown
+    NORMAL = 1 # TBD: What does this mean?
+    ENTRY = 2 # road is an entry to a higher road category (highway etc.)
+    EXIT = 3 # road is an exit to a lower road category (e.g. from highway to Interstate)
+    BUSLANE = 4 #
+    MERGING_LEFT = 5 # lane will be merged with left lane
+    MERGING_RIGHT = 6 # lane will be merged with right lane
+    TERMINATING	= 7 # lane will terminate abruptly. Lane change necessary most likely.
+    SLOW = 8 # lane for slow moving vehicles
+    SPECIAL	= 9 # lane for special vehicles (e.g. busses, taxis)
+    EMERGENCY = 10 # emergency lane, shoulder
+    PARKING	= 11 #
+    TEMPORARY = 12 #
+    PAVEMENT = 13 #
+    # BIKE = designated bike lane TODO: WAAAAAAAAAAAAAAAAAAAAAAAAAAS?
+    NUMBER_OF_ENTRIES = 14 # Total number of lane category entries
 
 class ParkingType(Enum):
-    UNKNOWN = UNKNOWN
-    NO_STOPPING = NO_STOPPING					# Absolute no stopping and no parking restriction.
-    NO_PARKING_STOPPING_YES = NO_PARKING_STOPPING_YES		# Parking is forbidden, but to stop is allowed.
-    PARKING_ALLOWED = PARKING_ALLOWED				# Parking and stopping is allowed
-    PARKING_ALLOWED_HALF_PAVEMENT =	PARKING_ALLOWED_HALF_PAVEMENT# Parking is allowed if half of the vehicle is parking on the pavement.
-    PARKING_ALLOWED_FULL_PAVEMENT =	PARKING_ALLOWED_FULL_PAVEMENT# Parking is allowed on the pavement. Only available for ELaneCategory::PAVEMENT.
+    UNKNOWN = 0
+    NO_STOPPING = 1 # Absolute no stopping and no parking restriction.
+    NO_PARKING_STOPPING_YES = 2	# Parking is forbidden, but to stop is allowed.
+    PARKING_ALLOWED = 3 # Parking and stopping is allowed
+    PARKING_ALLOWED_HALF_PAVEMENT =	4 # Parking is allowed if half of the vehicle is parking on the pavement.
+    PARKING_ALLOWED_FULL_PAVEMENT =	5 # Parking is allowed on the pavement. Only available for ELaneCategory::PAVEMENT.
+    NUMBER_OF_ENTRIES = 6
 
 
 class RightOfWay(Enum):
-    UNKNOWN				= 00 - 
-    RIGHT_OF_WAY			= 01 -
-    NO_RIGHT_OF_WAY		= 02 - 
-    NOT_EXPLICIT_DEFINED	= 03 -
+    UNKNOWN = 0
+    RIGHT_OF_WAY = 1
+    NO_RIGHT_OF_WAY = 2
+    NOT_EXPLICIT_DEFINED = 3
 
 
 class Direction(Enum):
-    NOT_DEFINED = NOT_DEFINED
-    SAME = SAME # Object points in the same direction as this object
-    CONTRA = CONTRA # Object points in the contra / opposite direction as this object
-    BOTH = BOTH # in both directions possible. This is not an option to describe relation between lane and lane marking.
+    NOT_DEFINED = 0
+    SAME = 1 # Object points in the same direction as this object
+    CONTRA = 2 # Object points in the contra / opposite direction as this object
+    BOTH = 3 # in both directions possible. This is not an option to describe relation between lane and lane marking.
+    NUMBER_OF_ENTRIES = 4 # NoE
 
 class LaneSegmentPointLine(Enum):
-    id = id
+    id = 0
     roadSegmentIndex = roadSegmentIndex #2^64 -1 = lane segment does not belong to any road.
     indexRoutes = indexRoutes
 
