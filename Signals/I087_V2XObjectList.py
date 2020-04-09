@@ -1,6 +1,7 @@
 from enum import Enum
 
 from Signals.AbstractSignal import AbstractSignal
+from Signals.I084_Points import SphericalPoints
 
 
 class ObjectMoveState(Enum):
@@ -33,7 +34,7 @@ class SignalSensObjList(AbstractSignal):
     def __init__(self,
                  identification: int,
                  timestamp_us: int,
-                 position: SphericalPoints, #TODO: implement sphericalpoints
+                 position: SphericalPoints,
                  heading: float,
                  heading_standard_deviation: float,
                  reference_point: int,

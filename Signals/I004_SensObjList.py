@@ -2,6 +2,7 @@ from enum import Enum
 
 from Signals.AbstractSignal import AbstractSignal
 from Signals.I000_ACCPTObject import SignalACCPTObjectObjectClass
+from Signals.I085_SensorSource import SignalSensorSource
 
 
 class SensObjListObjectSource(Enum):
@@ -89,7 +90,7 @@ class SignalSensObjList(AbstractSignal):
                  var_ulong_object_age: int,
                  var_longlong_timestamp: int,
                  var_float_object_lane_assignment: int,
-                 var_enum_object_source: SignalSensObjListObjectSource,
+                 var_enum_object_source: SignalSensorSource,
                  var_float_object_time_to_collision: float,
                  var_enum_object_class: SignalACCPTObjectObjectClass,
                  var_float_object_class_confidence: float,
