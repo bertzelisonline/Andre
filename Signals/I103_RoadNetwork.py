@@ -29,6 +29,7 @@ class RoadCategory(Enum):
     GRASSSTRIP = 14  #
     TOLLGATE = 15  #
     EMERGENCY_BAY = 16  #
+    NUMBER_OF_ENTRIES = 17 #
 
 
 class SurfaceMaterial(Enum):
@@ -54,8 +55,8 @@ class LaneCategory(Enum):
     PARKING = 11  #
     TEMPORARY = 12  #
     PAVEMENT = 13  #
-    # BIKE = designated bike lane TODO: WAAAAAAAAAAAAAAAAAAAAAAAAAAS?
-    NUMBER_OF_ENTRIES = 14  # Total number of lane category entries
+    BIKE = 14 #designated bike lane
+    NUMBER_OF_ENTRIES = 15  # Total number of lane category entries
 
 
 class ParkingType(Enum):
@@ -73,6 +74,7 @@ class RightOfWay(Enum):
     RIGHT_OF_WAY = 1
     NO_RIGHT_OF_WAY = 2
     NOT_EXPLICIT_DEFINED = 3
+    NUMBER_OF_ENTRIES = 4
 
 
 class Direction(Enum):
